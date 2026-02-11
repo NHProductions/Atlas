@@ -14,9 +14,10 @@ All videos metadata are stored within a 13 byte metadata file (On the calc, it s
 
 # VIDEO PLAYER:
 I went with a kind of minimalist player, to use it just press up/down to select a video, and enter to play it. If there's no videos, it automatically quits. You can make a nicer looking one if you want, but UI/UX design rlly isn't my thing.
-
+<details>
 <summary> [Example Videos:] (Click to expand)</summary>
 
 <video src="vid1.mp4"> </video>
 
 <video src="vid2.mp4"> </video>
+</details>
