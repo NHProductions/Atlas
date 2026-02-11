@@ -17,6 +17,7 @@ I went with a kind of minimalist player, to use it just press up/down to select 
 <details>
 <summary> [Example Videos:] (Click to expand)</summary>
 
-[<video src="/vid1.mp4" width="600" height="400"> </video>](https://github.com/NHProductions/Atlas/raw/refs/heads/main/vid1.mp4)
+https://github.com/NHProductions/Atlas/raw/refs/heads/main/vid1.mp4
+
 
 </details>
