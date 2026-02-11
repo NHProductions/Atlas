@@ -14,4 +14,10 @@ All videos metadata are stored within a 13 byte metadata file (On the calc, it s
 
 # VIDEO PLAYER:
 I went with a kind of minimalist player, to use it just press up/down to select a video, and enter to play it. If there's no videos, it automatically quits. You can make a nicer looking one if you want, but UI/UX design rlly isn't my thing.
-<iframe src="https://www.youtube.com/watch?v=yE7hZGJroVw" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+
+<details>
+  <summary> [Examples: ] (click to expand) </summary>
+https://github.com/user-attachments/assets/685aa15f-0b50-4d2d-97f4-3ab5d87dffd8
+https://github.com/user-attachments/assets/7e6c6c5c-26da-4f03-9208-e5b17aa8f18c
+</details>
+
