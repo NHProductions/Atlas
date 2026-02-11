@@ -11,3 +11,14 @@ All videos metadata are stored within a 13 byte metadata file (On the calc, it s
 | Bytes 0-3  | Bytes 4-8 | Bytes 9-10 | Byte 11 | Bytes 12-13
 | ------------- | ------------- | ------------- |------------- |------------- |
 | "DAT" Header  | Name  | Frame Count | Frame Appvar Amount | Frame rate (in MS)
+
+# VIDEO PLAYER:
+I went with a kind of minimalist player, to use it just press up/down to select a video, and enter to play it. If there's no videos, it automatically quits. You can make a nicer looking one if you want, but UI/UX design rlly isn't my thing.
+
+# EXAMPLES:
+
+<summary> Example 1: </summary>
+
+<video src="vid1.mp4"> </video>
+
+<video src="vid2.mp4"> </video>
