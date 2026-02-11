@@ -17,7 +17,9 @@ I went with a kind of minimalist player, to use it just press up/down to select 
 
 <details>
   <summary> [Examples: ] (click to expand) </summary>
+Also these look way better on the actual calculator; the emulator makes them look a little strange at moments.
 <video src=https://github.com/user-attachments/assets/685aa15f-0b50-4d2d-97f4-3ab5d87dffd8> </video>
+(I'm sorry, I had to lol)
 <video src=https://github.com/user-attachments/assets/7e6c6c5c-26da-4f03-9208-e5b17aa8f18c> </video>
 </details>
 
