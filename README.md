@@ -17,7 +17,7 @@ I went with a kind of minimalist player, to use it just press up/down to select 
 <details>
 <summary> [Example Videos:] (Click to expand)</summary>
 
-https://github.com/NHProductions/Atlas/raw/refs/heads/main/vid1.mp4
+<iframe src="https://www.youtube-nocookie.com/watch?v=yE7hZGJroVw" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 </details>
