@@ -1,8 +1,7 @@
-# Atlas
-Ti-84 CE Video pipeline &amp; player.
+# ATLAS
+.mp4 to TI-84 CE pipeline using python & the TI-84 CE C Toolchain. Obviously needs the TI-84 CE C Toolchain & some launcher such as Cesium.
 
-
-# Stats
+# STATS
 Python side converts the .mp4 files into a collection of .bin files representing 4 frames each. These frames are then converted into TI-84 CE's appvar files, for the video player to play.
 Along w/ the frames, there's also 2 other appvars, a PAT appvar, which has the palette for the video, & a DAT appvar, which has crucial metadata for the video.
 
