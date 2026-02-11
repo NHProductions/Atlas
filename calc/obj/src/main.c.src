@@ -1,0 +1,3889 @@
+	section	.text,"ax",@progbits
+	assume	adl = 1
+	file	0 "C:\Users\gabri\OneDrive\Desktop\Programming\Atlas\calc" "src\main.c" md5 0x5afe293a728469011d8d9ae6a0387054
+	file	1 "src" "main.c" md5 0x5afe293a728469011d8d9ae6a0387054
+	file	2 "src" "Tundora.h" md5 0x243638fd5322a2124c38e88e168a0ec2
+	file	3 "E:\CEDev\include" "stdint.h" md5 0xd46c4243fca6ffea12b12d8fdd8d926b
+	section	.text,"ax",@progbits
+	public	_fromNumberToStruct
+_fromNumberToStruct:
+	private	func_begin0
+func_begin0:
+	loc	1 29 0
+	cfi_sections .debug_frame
+	cfi_startproc
+	call	__frameset0
+	private	tmp0
+tmp0:
+	cfi_def_cfa ix, 6
+	cfi_offset ix, -6
+	ld	iy, (ix + 6)
+	ld	de, (ix + 9)
+	private	tmp1
+tmp1:
+	ld	c, 16
+	private	tmp2
+tmp2:
+	loc	1 31 16 prologue_end
+	push	de
+	pop	hl
+	call	__ishru
+	private	tmp3
+tmp3:
+	loc	1 31 11 is_stmt 0
+	ld	a, l
+	loc	1 31 9
+	ld	(iy), a
+	loc	1 32 11 is_stmt 1
+	ld	a, d
+	loc	1 32 9 is_stmt 0
+	ld	(iy + 1), a
+	loc	1 33 11 is_stmt 1
+	ld	a, e
+	loc	1 33 9 is_stmt 0
+	ld	(iy + 2), a
+	loc	1 34 5 is_stmt 1
+	lea	hl, iy
+	pop	ix
+	cfi_def_cfa sp, 3
+	cfi_restore ix
+	ret
+	private	tmp4
+tmp4:
+	section	.text,"ax",@progbits
+	private	func_end0
+func_end0:
+	cfi_endproc
+
+	section	.text,"ax",@progbits
+	public	_draw_frame
+_draw_frame:
+	private	func_begin1
+func_begin1:
+	loc	1 36 0
+	cfi_startproc
+	ld	hl, -9
+	call	__frameset
+	private	tmp5
+tmp5:
+	cfi_def_cfa ix, 6
+	cfi_offset ix, -6
+	ld	hl, (ix + 6)
+	ld	(ix - 6), hl
+	ld	hl, -2883584
+	ld	(ix - 3), hl
+	or	a, a
+	sbc	hl, hl
+	private	tmp6
+tmp6:
+	ld	de, 80
+	ld	a, 1
+	private	tmp7
+tmp7:
+BB1_1:
+	ld	(ix - 9), hl
+	private	tmp8
+tmp8:
+	loc	1 37 5 prologue_end
+	or	a, a
+	sbc	hl, de
+	jp	z, BB1_6
+	private	tmp9
+tmp9:
+	loc	1 0 5 is_stmt 0
+	ld	iy, (ix - 3)
+	ld	de, 0
+	private	tmp10
+tmp10:
+BB1_3:
+	loc	1 39 9 is_stmt 1
+	push	de
+	pop	hl
+	ld	bc, 100
+	or	a, a
+	sbc	hl, bc
+	jp	z, BB1_5
+	private	tmp11
+tmp11:
+	loc	1 0 9 is_stmt 0
+	lea	bc, iy
+	private	tmp12
+tmp12:
+	loc	1 40 30 is_stmt 1
+	ld	iy, (ix - 6)
+	add	iy, de
+	loc	1 40 22 is_stmt 0
+	or	a, a
+	sbc	hl, hl
+	ld	l, (iy)
+	push	bc
+	pop	iy
+	ld	c, a
+	call	__ishl
+	private	tmp13
+tmp13:
+	push	hl
+	pop	bc
+	ld	hl, _palette
+	add	hl, bc
+	ld	hl, (hl)
+	loc	1 40 20
+	ld	(iy), l
+	ld	(iy + 1), h
+	private	tmp14
+tmp14:
+	loc	1 39 39 is_stmt 1
+	inc	de
+	private	tmp15
+tmp15:
+	loc	1 39 9 is_stmt 0
+	lea	iy, iy + 2
+	jp	BB1_3
+	private	tmp16
+tmp16:
+BB1_5:
+	loc	1 0 9
+	ld	bc, (ix - 9)
+	loc	1 37 35 is_stmt 1
+	inc	bc
+	private	tmp17
+tmp17:
+	loc	1 37 5 is_stmt 0
+	ld	iy, (ix - 6)
+	lea	iy, iy + 100
+	ld	(ix - 6), iy
+	ld	hl, (ix - 3)
+	ld	de, 320
+	add	hl, de
+	ld	(ix - 3), hl
+	push	bc
+	pop	hl
+	private	tmp18
+tmp18:
+	loc	1 0 5
+	ld	de, 80
+	jp	BB1_1
+	private	tmp19
+tmp19:
+BB1_6:
+	loc	1 43 1 is_stmt 1
+	ld	sp, ix
+	pop	ix
+	cfi_def_cfa sp, 3
+	cfi_restore ix
+	ret
+	private	tmp20
+tmp20:
+	section	.text,"ax",@progbits
+	private	func_end1
+func_end1:
+	cfi_endproc
+
+	section	.text,"ax",@progbits
+	public	_play_video
+_play_video:
+	private	func_begin2
+func_begin2:
+	loc	1 45 0
+	cfi_startproc
+	ld	hl, -15
+	call	__frameset
+	private	tmp21
+tmp21:
+	cfi_def_cfa ix, 6
+	cfi_offset ix, -6
+	ld	de, (ix + 6)
+	private	tmp22
+tmp22:
+	loc	1 0 0 is_stmt 0
+	ld	hl, _.str
+	private	tmp23
+tmp23:
+	loc	1 46 20 prologue_end is_stmt 1
+	push	hl
+	private	tmp24
+tmp24:
+	push	de
+	call	_ti_Open
+	private	tmp25
+tmp25:
+	ld	c, a
+	pop	hl
+	pop	hl
+	private	tmp26
+tmp26:
+	loc	1 47 9
+	or	a, a
+	jp	nz, BB2_2
+	private	tmp27
+tmp27:
+	loc	1 0 0 is_stmt 0
+	ld	hl, _.str.1
+	loc	1 48 9 is_stmt 1
+	ld	de, (ix + 6)
+	push	de
+	push	hl
+	ld	hl, -327680
+	push	hl
+	push	hl
+	call	_sprintf
+	private	tmp28
+tmp28:
+	pop	hl
+	pop	hl
+	pop	hl
+	jp	BB2_13
+	private	tmp29
+tmp29:
+BB2_2:
+	loc	1 0 9 is_stmt 0
+	ld	hl, 1
+	lea	de, ix - 2
+	lea	iy, ix - 6
+	private	tmp30
+tmp30:
+	loc	1 53 5 is_stmt 1
+	ld	(ix - 12), iy
+	ld	(ix - 9), bc
+	push	bc
+	push	hl
+	inc	hl
+	push	hl
+	push	de
+	call	_ti_Read
+	private	tmp31
+tmp31:
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	de, 0
+	push	de
+	pop	bc
+	private	tmp32
+tmp32:
+BB2_3:
+	loc	1 55 29
+	ld	hl, (ix - 2)
+	private	tmp33
+tmp33:
+	ld	e, l
+	ld	d, h
+	private	tmp34
+tmp34:
+	loc	1 55 9 is_stmt 0
+	push	bc
+	pop	hl
+	private	tmp35
+tmp35:
+	or	a, a
+	sbc	hl, de
+	jp	nc, BB2_12
+	private	tmp36
+tmp36:
+	loc	1 0 9
+	ld	(ix - 15), bc
+	private	tmp37
+tmp37:
+	loc	1 57 17 is_stmt 1
+	ld	hl, (ix - 9)
+	push	hl
+	ld	hl, 1
+	push	hl
+	ld	hl, 4
+	push	hl
+	ld	hl, (ix - 12)
+	private	tmp38
+tmp38:
+	push	hl
+	private	tmp39
+tmp39:
+	call	_ti_Read
+	private	tmp40
+tmp40:
+	pop	de
+	pop	de
+	pop	de
+	pop	de
+	private	tmp41
+tmp41:
+	loc	1 57 17 is_stmt 0
+	ld	de, 1
+	or	a, a
+	sbc	hl, de
+	jp	nz, BB2_9
+	private	tmp42
+tmp42:
+	loc	1 64 17 is_stmt 1
+	ld	hl, (ix - 6)
+	ld	e, (ix - 3)
+	private	tmp43
+tmp43:
+	loc	1 0 17 is_stmt 0
+	ld	bc, 8000
+	private	tmp44
+tmp44:
+	loc	1 64 17
+	xor	a, a
+	call	__lcmpu
+	private	tmp45
+tmp45:
+	jp	nc, BB2_7
+	private	tmp46
+tmp46:
+	loc	1 0 17
+	ld	iy, 0
+	private	tmp47
+tmp47:
+	loc	1 65 17 is_stmt 1
+	push	iy
+	push	bc
+	push	de
+	push	hl
+	ld	hl, (ix - 15)
+	push	hl
+	ld	hl, _.str.3
+	push	hl
+	ld	hl, -327680
+	push	hl
+	push	hl
+	call	_sprintf
+	private	tmp48
+tmp48:
+	loc	1 0 17 is_stmt 0
+	ld	bc, 8000
+	loc	1 65 17
+	ld	hl, 24
+	add	hl, sp
+	ld	sp, hl
+	private	tmp49
+tmp49:
+BB2_7:
+	loc	1 71 27 is_stmt 1
+	ld	hl, (ix - 9)
+	push	hl
+	push	bc
+	ld	hl, 1
+	push	hl
+	ld	hl, _frame
+	push	hl
+	call	_ti_Read
+	private	tmp50
+tmp50:
+	pop	de
+	pop	de
+	pop	de
+	pop	de
+	private	tmp51
+tmp51:
+	loc	1 71 17 is_stmt 0
+	ld	de, 8000
+	or	a, a
+	sbc	hl, de
+	jp	nz, BB2_10
+	private	tmp52
+tmp52:
+	loc	1 76 13 is_stmt 1
+	ld	hl, _frame
+	push	hl
+	call	_draw_frame
+	private	tmp53
+tmp53:
+	pop	hl
+	loc	1 77 24
+	ld	iy, (ix + 9)
+	ld	hl, (iy + 9)
+	loc	1 77 13 is_stmt 0
+	push	hl
+	call	_delay
+	private	tmp54
+tmp54:
+	pop	hl
+	ld	bc, (ix - 15)
+	private	tmp55
+tmp55:
+	loc	1 55 43 is_stmt 1
+	inc	bc
+	private	tmp56
+tmp56:
+	loc	1 0 43 is_stmt 0
+	ld	de, 0
+	jp	BB2_3
+	private	tmp57
+tmp57:
+BB2_9:
+	ld	hl, _.str.2
+	jp	BB2_11
+BB2_10:
+	ld	hl, _.str.4
+BB2_11:
+	ld	de, (ix - 15)
+	private	tmp58
+tmp58:
+	push	de
+	push	hl
+	ld	hl, -327680
+	push	hl
+	push	hl
+	call	_sprintf
+	private	tmp59
+tmp59:
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	private	tmp60
+tmp60:
+BB2_12:
+	loc	1 80 5 is_stmt 1
+	ld	hl, (ix - 9)
+	push	hl
+	call	_ti_Close
+	private	tmp61
+tmp61:
+BB2_13:
+	loc	1 0 0 is_stmt 0
+	pop	hl
+	loc	1 81 1 is_stmt 1
+	ld	sp, ix
+	pop	ix
+	cfi_def_cfa sp, 3
+	cfi_restore ix
+	ret
+	private	tmp62
+tmp62:
+	section	.text,"ax",@progbits
+	private	func_end2
+func_end2:
+	cfi_endproc
+	file	4 "E:\CEDev\include" "fileioc.h" md5 0x1d45b16be9e3a0f57010bfaea80279f5
+	file	5 "E:\CEDev\include" "cdefs.h" md5 0x0894ea5ac057d8787ea29df39deb1453
+	file	6 "E:\CEDev\include\sys" "timers.h" md5 0xac0e21d7da7dc0b5c15e8925be2a0616
+
+	section	.text,"ax",@progbits
+	public	_playFullVideo
+_playFullVideo:
+	private	func_begin3
+func_begin3:
+	loc	1 82 0
+	cfi_startproc
+	ld	hl, -45
+	call	__frameset
+	private	tmp63
+tmp63:
+	cfi_def_cfa ix, 6
+	cfi_offset ix, -6
+	ld	de, -327680
+	private	tmp64
+tmp64:
+	loc	1 0 0 is_stmt 0
+	ld	hl, _.str.5
+	lea	bc, ix - 12
+	loc	1 84 5 prologue_end is_stmt 1
+	ld	(ix - 39), bc
+	push	hl
+	push	de
+	call	_sprintf
+	private	tmp65
+tmp65:
+	pop	hl
+	pop	hl
+	loc	1 86 5
+	ld	hl, (ix + 6)
+	private	tmp66
+tmp66:
+	push	hl
+	ld	hl, (ix - 39)
+	private	tmp67
+tmp67:
+	push	hl
+	call	_strcpy
+	private	tmp68
+tmp68:
+	pop	hl
+	pop	hl
+	loc	1 87 35
+	ld	hl, (ix - 39)
+	push	hl
+	call	_strlen
+	private	tmp69
+tmp69:
+	push	hl
+	pop	de
+	pop	hl
+	ld	bc, (ix - 39)
+	push	bc
+	pop	iy
+	add	iy, de
+	ld	hl, 4997456
+	ld	(iy), hl
+	ld	(iy + 3), 0
+	loc	1 87 27 is_stmt 0
+	ld	hl, _.str
+	push	hl
+	push	bc
+	call	_ti_Open
+	private	tmp70
+tmp70:
+	ld	l, a
+	ld	(ix - 42), hl
+	pop	hl
+	pop	hl
+	private	tmp71
+tmp71:
+	loc	1 89 5 is_stmt 1
+	ld	hl, _.str.7
+	push	hl
+	ld	hl, -327680
+	push	hl
+	call	_sprintf
+	private	tmp72
+tmp72:
+	loc	1 0 5 is_stmt 0
+	ld	de, (ix - 42)
+	private	tmp73
+tmp73:
+	loc	1 89 5
+	pop	hl
+	pop	hl
+	loc	1 90 9 is_stmt 1
+	ld	a, e
+	or	a, a
+	jp	nz, BB3_3
+	private	tmp74
+tmp74:
+	loc	1 0 0 is_stmt 0
+	ld	hl, _.str.8
+	loc	1 91 9 is_stmt 1
+	push	hl
+	ld	hl, -327680
+	push	hl
+	call	_sprintf
+	private	tmp75
+tmp75:
+	pop	hl
+	pop	hl
+	loc	1 92 9
+	ld	hl, (ix - 39)
+	push	hl
+	ld	hl, _.str.9
+	push	hl
+	ld	hl, -327680
+	push	hl
+	call	_sprintf
+	private	tmp76
+tmp76:
+	pop	hl
+	pop	hl
+	pop	hl
+	private	tmp77
+tmp77:
+BB3_2:
+	loc	1 0 0 is_stmt 0
+	call	_gfx_End
+	private	tmp78
+tmp78:
+	loc	1 111 1 is_stmt 1
+	ld	sp, ix
+	pop	ix
+	cfi_def_cfa sp, 3
+	cfi_restore ix
+	ret
+BB3_3:
+	private	tmp79
+tmp79:
+	loc	1 0 1 is_stmt 0
+	ld	iy, _palette
+	ld	hl, 512
+	ld	bc, 1
+	private	tmp80
+tmp80:
+	loc	1 96 9 is_stmt 1
+	push	de
+	push	bc
+	push	hl
+	push	iy
+	call	_ti_Read
+	private	tmp81
+tmp81:
+	pop	de
+	pop	de
+	pop	de
+	pop	de
+	private	tmp82
+tmp82:
+	loc	1 96 9 is_stmt 0
+	ld	de, 1
+	or	a, a
+	sbc	hl, de
+	jr	z, BB3_5
+	loc	1 0 9
+	ld	hl, _.str.10
+	private	tmp83
+tmp83:
+	loc	1 97 9 is_stmt 1
+	push	hl
+	ld	hl, -327680
+	push	hl
+	push	hl
+	call	_sprintf
+	private	tmp84
+tmp84:
+	pop	hl
+	pop	hl
+	pop	hl
+	private	tmp85
+tmp85:
+BB3_5:
+	loc	1 0 9 is_stmt 0
+	lea	hl, ix - 24
+	ld	(ix - 39), hl
+	lea	hl, ix - 36
+	loc	1 99 5 is_stmt 1
+	ld	(ix - 45), hl
+	ld	hl, (ix - 42)
+	push	hl
+	call	_ti_Close
+	private	tmp86
+tmp86:
+	pop	hl
+	loc	1 100 5
+	ld	hl, _.str.11
+	push	hl
+	ld	hl, -327680
+	push	hl
+	push	hl
+	call	_sprintf
+	private	tmp87
+tmp87:
+	pop	hl
+	pop	hl
+	pop	hl
+	or	a, a
+	sbc	hl, hl
+	loc	1 101 5
+	push	hl
+	call	_gfx_FillScreen
+	private	tmp88
+tmp88:
+	pop	hl
+	ld	hl, 1000
+	loc	1 102 5
+	push	hl
+	call	_delay
+	private	tmp89
+tmp89:
+	pop	hl
+	ld	bc, 0
+BB3_6:
+	private	tmp90
+tmp90:
+	loc	1 0 5 is_stmt 0
+	ld	de, 0
+	ld	iy, (ix + 6)
+	private	tmp91
+tmp91:
+	loc	1 103 25 is_stmt 1
+	ld	e, (iy + 8)
+	private	tmp92
+tmp92:
+	loc	1 103 5 is_stmt 0
+	push	bc
+	pop	hl
+	or	a, a
+	sbc	hl, de
+	jp	nc, BB3_2
+	private	tmp93
+tmp93:
+	loc	1 106 9 is_stmt 1
+	push	iy
+	ld	hl, (ix - 45)
+	push	hl
+	ld	(ix - 42), bc
+	call	_strcpy
+	private	tmp94
+tmp94:
+	pop	hl
+	pop	hl
+	loc	1 107 9
+	ld	hl, (ix - 42)
+	push	hl
+	ld	hl, (ix - 45)
+	push	hl
+	ld	hl, _.str.12
+	push	hl
+	ld	hl, (ix - 39)
+	push	hl
+	call	_sprintf
+	private	tmp95
+tmp95:
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	loc	1 108 9
+	ld	hl, (ix + 6)
+	push	hl
+	ld	hl, (ix - 39)
+	push	hl
+	call	_play_video
+	private	tmp96
+tmp96:
+	loc	1 0 9 is_stmt 0
+	ld	bc, (ix - 42)
+	loc	1 108 9
+	pop	hl
+	pop	hl
+	private	tmp97
+tmp97:
+	loc	1 103 49 is_stmt 1
+	inc	bc
+	private	tmp98
+tmp98:
+	loc	1 0 49 is_stmt 0
+	jp	BB3_6
+	private	tmp99
+tmp99:
+	section	.text,"ax",@progbits
+	private	func_end3
+func_end3:
+	cfi_endproc
+	file	7 "E:\CEDev\include" "graphx.h" md5 0xa6405b9849ea907feac355573c3087d0
+
+	section	.text,"ax",@progbits
+	public	_getVideoFromVarName
+_getVideoFromVarName:
+	private	func_begin4
+func_begin4:
+	loc	1 113 0 is_stmt 1
+	cfi_startproc
+	ld	hl, -9
+	call	__frameset
+	private	tmp100
+tmp100:
+	cfi_def_cfa ix, 6
+	cfi_offset ix, -6
+	ld	hl, 11
+	private	tmp101
+tmp101:
+	loc	1 114 18 prologue_end
+	push	hl
+	call	_malloc
+	private	tmp102
+tmp102:
+	ld	(ix - 6), hl
+	pop	hl
+	private	tmp103
+tmp103:
+	loc	1 115 20
+	ld	hl, _.str
+	push	hl
+	ld	hl, (ix + 6)
+	private	tmp104
+tmp104:
+	push	hl
+	call	_ti_Open
+	private	tmp105
+tmp105:
+	ld	e, a
+	pop	hl
+	pop	hl
+	private	tmp106
+tmp106:
+	loc	1 119 9
+	or	a, a
+	jp	nz, BB4_2
+	private	tmp107
+tmp107:
+	loc	1 0 9 is_stmt 0
+	ld	hl, -327680
+	private	tmp108
+tmp108:
+	ld	de, _.str.1
+	private	tmp109
+tmp109:
+	loc	1 120 9 is_stmt 1
+	ld	bc, (ix + 6)
+	push	bc
+	push	de
+	push	hl
+	push	hl
+	call	_sprintf
+	private	tmp110
+tmp110:
+	pop	hl
+	pop	hl
+	pop	hl
+	jp	BB4_3
+	private	tmp111
+tmp111:
+BB4_2:
+	loc	1 0 9 is_stmt 0
+	ld	hl, 3
+	ld	bc, 1
+	loc	1 124 5 is_stmt 1
+	push	de
+	push	bc
+	push	hl
+	pea	ix - 3
+	ld	(ix - 9), de
+	call	_ti_Read
+	private	tmp112
+tmp112:
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	loc	1 125 5
+	ld	hl, (ix - 9)
+	push	hl
+	ld	hl, 1
+	push	hl
+	ld	hl, 5
+	push	hl
+	ld	hl, (ix - 6)
+	push	hl
+	call	_ti_Read
+	private	tmp113
+tmp113:
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	iy, (ix - 6)
+	loc	1 126 18
+	ld	(iy + 5), 0
+	loc	1 127 5
+	ld	hl, (ix - 9)
+	push	hl
+	ld	hl, 1
+	push	hl
+	inc	hl
+	push	hl
+	pea	iy + 6
+	call	_ti_Read
+	private	tmp114
+tmp114:
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	loc	1 128 5
+	ld	hl, (ix - 9)
+	push	hl
+	ld	hl, 1
+	push	hl
+	push	hl
+	ld	iy, (ix - 6)
+	pea	iy + 8
+	call	_ti_Read
+	private	tmp115
+tmp115:
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	loc	1 129 5
+	ld	hl, (ix - 9)
+	push	hl
+	ld	hl, 1
+	push	hl
+	inc	hl
+	push	hl
+	ld	iy, (ix - 6)
+	pea	iy + 9
+	call	_ti_Read
+	private	tmp116
+tmp116:
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	loc	1 130 5
+	ld	hl, (ix - 9)
+	push	hl
+	call	_ti_Close
+	private	tmp117
+tmp117:
+BB4_3:
+	loc	1 0 0 is_stmt 0
+	pop	hl
+	loc	1 132 1 is_stmt 1
+	ld	hl, (ix - 6)
+	ld	sp, ix
+	pop	ix
+	cfi_def_cfa sp, 3
+	cfi_restore ix
+	ret
+	private	tmp118
+tmp118:
+	section	.text,"ax",@progbits
+	private	func_end4
+func_end4:
+	cfi_endproc
+
+	section	.text,"ax",@progbits
+	public	_getVideos
+_getVideos:
+	private	func_begin5
+func_begin5:
+	loc	1 133 0
+	cfi_startproc
+	ld	hl, -13
+	call	__frameset
+	private	tmp119
+tmp119:
+	cfi_def_cfa ix, 6
+	cfi_offset ix, -6
+	ld	hl, 0
+	private	tmp120
+tmp120:
+	loc	1 0 0 is_stmt 0
+	ld	de, _.str.13
+	lea	iy, ix - 3
+	lea	bc, ix - 4
+	private	tmp121
+tmp121:
+	loc	1 137 11 prologue_end is_stmt 1
+	ld	(ix - 3), hl
+	loc	1 139 5
+	ld	(ix - 7), iy
+	ld	(ix - 10), bc
+	private	tmp122
+tmp122:
+BB5_1:
+	loc	1 139 24 is_stmt 0
+	push	bc
+	push	de
+	push	iy
+	private	tmp123
+tmp123:
+	call	_ti_DetectAny
+	private	tmp124
+tmp124:
+	pop	de
+	pop	de
+	pop	de
+	private	tmp125
+tmp125:
+	loc	1 139 5
+	add	hl, bc
+	private	tmp126
+tmp126:
+	or	a, a
+	sbc	hl, bc
+	jp	z, BB5_4
+	private	tmp127
+tmp127:
+	loc	1 140 13 is_stmt 1
+	ld	a, (ix - 4)
+	cp	a, 21
+	ld	de, _.str.13
+	ld	iy, (ix - 7)
+	ld	bc, (ix - 10)
+	jp	nz, BB5_1
+	private	tmp128
+tmp128:
+	loc	1 141 32
+	ld	de, (_Videos)
+	loc	1 141 40 is_stmt 0
+	ld	(ix - 13), de
+	push	hl
+	call	_getVideoFromVarName
+	private	tmp129
+tmp129:
+	pop	de
+	loc	1 141 13
+	push	hl
+	ld	hl, (ix - 13)
+	push	hl
+	call	_List_AppendElement
+	private	tmp130
+tmp130:
+	loc	1 0 13
+	ld	bc, (ix - 10)
+	ld	iy, (ix - 7)
+	ld	de, _.str.13
+	loc	1 141 13
+	pop	hl
+	pop	hl
+	jp	BB5_1
+	private	tmp131
+tmp131:
+BB5_4:
+	loc	1 144 1 is_stmt 1
+	ld	sp, ix
+	pop	ix
+	cfi_def_cfa sp, 3
+	cfi_restore ix
+	ret
+	private	tmp132
+tmp132:
+	section	.text,"ax",@progbits
+	private	func_end5
+func_end5:
+	cfi_endproc
+
+	section	.text,"ax",@progbits
+	public	_main
+_main:
+	private	func_begin6
+func_begin6:
+	loc	1 146 0
+	cfi_startproc
+	ld	hl, -17
+	call	__frameset
+	private	tmp133
+tmp133:
+	cfi_def_cfa ix, 6
+	cfi_offset ix, -6
+	ld	hl, 6
+	lea	de, ix - 11
+	private	tmp134
+tmp134:
+	loc	1 147 14 prologue_end
+	ld	(ix - 14), de
+	push	hl
+	call	_malloc
+	private	tmp135
+tmp135:
+	ld	(ix - 17), hl
+	pop	de
+	loc	1 147 12 is_stmt 0
+	ld	(_Videos), hl
+	loc	1 148 15 is_stmt 1
+	ld	hl, (ix - 14)
+	push	hl
+	call	_NewList
+	private	tmp136
+tmp136:
+	pop	hl
+	ld	de, (ix - 17)
+	ld	hl, (ix - 14)
+	ld	bc, 6
+	ldir
+	loc	1 149 5
+	ld	hl, _.str.14
+	push	hl
+	ld	hl, -327680
+	push	hl
+	call	_sprintf
+	private	tmp137
+tmp137:
+	pop	hl
+	pop	hl
+	loc	1 150 5
+	call	_gfx_Begin
+	private	tmp138
+tmp138:
+	loc	1 151 5
+	call	_getVideos
+	private	tmp139
+tmp139:
+	loc	1 0 5 is_stmt 0
+	ld	bc, 0
+BB6_1:
+	private	tmp140
+tmp140:
+	loc	1 154 25 is_stmt 1
+	ld	iy, (_Videos)
+	loc	1 154 33 is_stmt 0
+	ld	de, (iy + 3)
+	private	tmp141
+tmp141:
+	loc	1 154 5
+	push	bc
+	pop	hl
+	or	a, a
+	sbc	hl, de
+	call	pe, __setflag
+	private	tmp142
+tmp142:
+	jp	p, BB6_3
+	private	tmp143
+tmp143:
+	loc	1 155 30 is_stmt 1
+	push	bc
+	push	iy
+	ld	(ix - 17), bc
+	call	_List_GetElement
+	private	tmp144
+tmp144:
+	pop	de
+	pop	de
+	loc	1 155 58 is_stmt 0
+	ld	hl, (hl)
+	loc	1 155 21
+	ld	de, (ix - 14)
+	ld	bc, 11
+	ldir
+	loc	1 156 9 is_stmt 1
+	ld	bc, (ix - 5)
+	ld	de, 0
+	push	de
+	pop	hl
+	ld	l, c
+	ld	h, b
+	ld	e, (ix - 3)
+	ld	iy, (ix - 2)
+	ld	bc, 0
+	ld	c, iyl
+	ld	b, iyh
+	push	bc
+	push	de
+	push	hl
+	ld	hl, (ix - 14)
+	push	hl
+	ld	hl, (ix - 17)
+	push	hl
+	ld	hl, _.str.15
+	push	hl
+	ld	hl, -327680
+	push	hl
+	call	_sprintf
+	private	tmp145
+tmp145:
+	loc	1 0 9 is_stmt 0
+	ld	bc, (ix - 17)
+	loc	1 156 9
+	ld	hl, 21
+	add	hl, sp
+	ld	sp, hl
+	private	tmp146
+tmp146:
+	loc	1 154 42 is_stmt 1
+	inc	bc
+	private	tmp147
+tmp147:
+	loc	1 0 42 is_stmt 0
+	jp	BB6_1
+	private	tmp148
+tmp148:
+BB6_3:
+	loc	1 158 9 is_stmt 1
+	ex	de, hl
+	add	hl, bc
+	or	a, a
+	sbc	hl, bc
+	jr	nz, BB6_5
+	private	tmp149
+tmp149:
+	loc	1 159 9
+	ld	hl, _.str.16
+	push	hl
+	ld	hl, -327680
+	push	hl
+	call	_sprintf
+	private	tmp150
+tmp150:
+	pop	hl
+	pop	hl
+	jp	BB6_17
+	private	tmp151
+tmp151:
+BB6_5:
+	loc	1 163 25
+	or	a, a
+	sbc	hl, hl
+	ld	(_currentSelected), hl
+BB6_6:
+	private	tmp152
+tmp152:
+	loc	1 165 13
+	call	_kb_Scan
+	private	tmp153
+tmp153:
+	loc	1 166 17
+	ld	hl, -720868
+	push	de
+	ld	e, (hl)
+	inc	hl
+	ld	d, (hl)
+	ld	l, e
+	ld	h, d
+	pop	de
+	ld.sis	bc, 1
+	loc	1 166 28 is_stmt 0
+	call	__sand
+	private	tmp154
+tmp154:
+	loc	1 166 17
+	bit	0, l
+	jp	nz, BB6_16
+	loc	1 0 17
+	ld	iy, -720866
+	private	tmp155
+tmp155:
+	loc	1 171 17 is_stmt 1
+	ld	l, (iy)
+	ld	h, (iy + 1)
+	loc	1 171 28 is_stmt 0
+	ld	a, l
+	private	tmp156
+tmp156:
+	loc	1 171 17
+	bit	3, a
+	jp	z, BB6_11
+	private	tmp157
+tmp157:
+	loc	1 172 32 is_stmt 1
+	ld	de, (_currentSelected)
+	inc	de
+	private	tmp158
+tmp158:
+	loc	1 173 40
+	ld	iy, (_Videos)
+	loc	1 173 48 is_stmt 0
+	ld	bc, (iy + 3)
+	private	tmp159
+tmp159:
+	loc	1 173 21
+	push	de
+	pop	hl
+	or	a, a
+	sbc	hl, bc
+	call	pe, __setflag
+	private	tmp160
+tmp160:
+	loc	1 0 21
+	ld	hl, 0
+	loc	1 173 21
+	jp	m, BB6_10
+	loc	1 0 21
+	ex	de, hl
+BB6_10:
+	ld	(_currentSelected), de
+	loc	1 174 17 is_stmt 1
+	push	de
+	push	iy
+	call	_List_GetElement
+	private	tmp161
+tmp161:
+	pop	de
+	pop	de
+	ld	hl, (hl)
+	push	hl
+	ld	hl, _.str.17
+	push	hl
+	ld	hl, -327680
+	push	hl
+	call	_sprintf
+	private	tmp162
+tmp162:
+	pop	hl
+	pop	hl
+	pop	hl
+	scf
+	sbc	hl, hl
+	loc	1 175 17
+	push	hl
+	call	_gfx_FillScreen
+	private	tmp163
+tmp163:
+	pop	hl
+	loc	1 176 17
+	ld	hl, 230
+	push	hl
+	or	a, a
+	sbc	hl, hl
+	push	hl
+	call	_gfx_SetTextXY
+	private	tmp164
+tmp164:
+	pop	hl
+	pop	hl
+	loc	1 177 58
+	ld	hl, (_Videos)
+	loc	1 177 66 is_stmt 0
+	ld	de, (_currentSelected)
+	loc	1 177 42
+	push	de
+	push	hl
+	call	_List_GetElement
+	private	tmp165
+tmp165:
+	pop	de
+	pop	de
+	loc	1 177 84
+	ld	hl, (hl)
+	loc	1 177 17
+	push	hl
+	call	_gfx_PrintString
+	private	tmp166
+tmp166:
+	pop	hl
+	loc	1 178 17 is_stmt 1
+	ld	hl, 200
+	push	hl
+	call	_delay
+	private	tmp167
+tmp167:
+	pop	hl
+	ld.sis	bc, 1
+	ld	iy, -720866
+	private	tmp168
+tmp168:
+BB6_11:
+	loc	1 180 17
+	ld	l, (iy)
+	ld	h, (iy + 1)
+	loc	1 180 28 is_stmt 0
+	call	__sand
+	private	tmp169
+tmp169:
+	loc	1 180 17
+	bit	0, l
+	jp	z, BB6_15
+	private	tmp170
+tmp170:
+	loc	1 181 32 is_stmt 1
+	ld	hl, (_currentSelected)
+	push	hl
+	pop	de
+	dec	de
+	ld	(_currentSelected), de
+	loc	1 0 0 is_stmt 0
+	ld	iy, (_Videos)
+	loc	1 182 21 is_stmt 1
+	ld	bc, 1
+	or	a, a
+	sbc	hl, bc
+	call	pe, __setflag
+	private	tmp171
+tmp171:
+	jp	p, BB6_14
+	private	tmp172
+tmp172:
+	loc	1 182 68 is_stmt 0
+	ld	de, (iy + 3)
+	loc	1 182 75
+	dec	de
+	loc	1 182 58
+	ld	(_currentSelected), de
+	private	tmp173
+tmp173:
+BB6_14:
+	loc	1 183 17 is_stmt 1
+	push	de
+	push	iy
+	call	_List_GetElement
+	private	tmp174
+tmp174:
+	pop	de
+	pop	de
+	ld	hl, (hl)
+	push	hl
+	ld	hl, _.str.17
+	push	hl
+	ld	hl, -327680
+	push	hl
+	call	_sprintf
+	private	tmp175
+tmp175:
+	pop	hl
+	pop	hl
+	pop	hl
+	scf
+	sbc	hl, hl
+	loc	1 184 17
+	push	hl
+	call	_gfx_FillScreen
+	private	tmp176
+tmp176:
+	pop	hl
+	loc	1 185 17
+	ld	hl, 230
+	push	hl
+	or	a, a
+	sbc	hl, hl
+	push	hl
+	call	_gfx_SetTextXY
+	private	tmp177
+tmp177:
+	pop	hl
+	pop	hl
+	loc	1 186 58
+	ld	hl, (_Videos)
+	loc	1 186 66 is_stmt 0
+	ld	de, (_currentSelected)
+	loc	1 186 42
+	push	de
+	push	hl
+	call	_List_GetElement
+	private	tmp178
+tmp178:
+	pop	de
+	pop	de
+	loc	1 186 84
+	ld	hl, (hl)
+	loc	1 186 17
+	push	hl
+	call	_gfx_PrintString
+	private	tmp179
+tmp179:
+	pop	hl
+	loc	1 187 17 is_stmt 1
+	ld	hl, 200
+	push	hl
+	call	_delay
+	private	tmp180
+tmp180:
+	pop	hl
+	private	tmp181
+tmp181:
+BB6_15:
+	loc	1 189 13
+	ld	hl, 100
+	push	hl
+	call	_delay
+	private	tmp182
+tmp182:
+	pop	hl
+	jp	BB6_6
+BB6_16:
+	private	tmp183
+tmp183:
+	loc	1 167 17
+	ld	hl, (_Videos)
+	ld	de, (_currentSelected)
+	push	de
+	push	hl
+	call	_List_GetElement
+	private	tmp184
+tmp184:
+	pop	de
+	pop	de
+	ld	hl, (hl)
+	push	hl
+	ld	hl, _.str.17
+	push	hl
+	ld	hl, -327680
+	push	hl
+	call	_sprintf
+	private	tmp185
+tmp185:
+	pop	hl
+	pop	hl
+	pop	hl
+	loc	1 168 55
+	ld	hl, (_Videos)
+	loc	1 168 63 is_stmt 0
+	ld	de, (_currentSelected)
+	loc	1 168 39
+	push	de
+	push	hl
+	call	_List_GetElement
+	private	tmp186
+tmp186:
+	pop	de
+	pop	de
+	loc	1 168 81
+	ld	hl, (hl)
+	loc	1 168 17
+	push	hl
+	call	_playFullVideo
+	private	tmp187
+tmp187:
+	pop	hl
+	private	tmp188
+tmp188:
+	loc	1 195 5 is_stmt 1
+	call	_gfx_End
+	private	tmp189
+tmp189:
+BB6_17:
+	loc	1 0 5 is_stmt 0
+	or	a, a
+	sbc	hl, hl
+	loc	1 197 1 is_stmt 1
+	ld	sp, ix
+	pop	ix
+	cfi_def_cfa sp, 3
+	cfi_restore ix
+	ret
+	private	tmp190
+tmp190:
+	section	.text,"ax",@progbits
+	private	func_end6
+func_end6:
+	cfi_endproc
+	file	8 "E:\CEDev\include" "keypadc.h" md5 0x08ccc68d35ea83ac8f06307257ddf02f
+
+	section	.data,"aw",@progbits
+	public	_currentSelected
+_currentSelected:
+	dl	16777215
+
+	section	.bss,"aw",@nobits
+	public	_Videos
+_Videos:
+	rb	3
+
+	section	.bss,"aw",@nobits
+	public	_palette
+_palette:
+	rb	512
+
+	section	.rodata,"a",@progbits
+	private	_.str
+_.str:
+	db	"r", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.1
+_.str.1:
+	db	"Failed to open %s", 10, 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.2
+_.str.2:
+	db	"Failed to read size for frame %d", 10, 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.3
+_.str.3:
+	db	"Frame %d smaller than expected (%u < %u)", 10, 0
+
+	section	.bss,"aw",@nobits
+	public	_frame
+_frame:
+	rb	8000
+
+	section	.rodata,"a",@progbits
+	private	_.str.4
+_.str.4:
+	db	"Failed to read frame %d data", 10, 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.5
+_.str.5:
+	db	"Staring load pallete", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.7
+_.str.7:
+	db	"Palette opened", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.8
+_.str.8:
+	db	"Failed to open palette ", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.9
+_.str.9:
+	db	"%s", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.10
+_.str.10:
+	db	"Failed to read full palette data", 10, 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.11
+_.str.11:
+	db	"Palette loaded", 10, 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.12
+_.str.12:
+	db	"%s%03d", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.13
+_.str.13:
+	db	"DAT", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.14
+_.str.14:
+	db	"STARTING", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.15
+_.str.15:
+	db	10, "Video %d: Name: %s, Frames: %d, Bins: %d, Frame Rate: %d", 10, 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.16
+_.str.16:
+	db	"No videos found!", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.17
+_.str.17:
+	db	"Selected: %s", 0
+
+	section	.debug_loclists,"",@progbits
+	dd	debug_list_header_end0-debug_list_header_start0
+	private	debug_list_header_start0
+debug_list_header_start0:
+	dw	5
+	db	3
+	db	0
+	dd	18
+	private	loclists_table_base0
+loclists_table_base0:
+	dd	debug_loc0-loclists_table_base0
+	dd	debug_loc1-loclists_table_base0
+	dd	debug_loc2-loclists_table_base0
+	dd	debug_loc3-loclists_table_base0
+	dd	debug_loc4-loclists_table_base0
+	dd	debug_loc5-loclists_table_base0
+	dd	debug_loc6-loclists_table_base0
+	dd	debug_loc7-loclists_table_base0
+	dd	debug_loc8-loclists_table_base0
+	dd	debug_loc9-loclists_table_base0
+	dd	debug_loc10-loclists_table_base0
+	dd	debug_loc11-loclists_table_base0
+	dd	debug_loc12-loclists_table_base0
+	dd	debug_loc13-loclists_table_base0
+	dd	debug_loc14-loclists_table_base0
+	dd	debug_loc15-loclists_table_base0
+	dd	debug_loc16-loclists_table_base0
+	dd	debug_loc17-loclists_table_base0
+	private	debug_loc0
+debug_loc0:
+	db	4
+	uleb128	tmp8-func_begin0
+	uleb128	tmp17-func_begin0
+	db	2
+	db	116
+	db	0
+	db	4
+	uleb128	tmp17-func_begin0
+	uleb128	tmp18-func_begin0
+	db	1
+	db	80
+	db	4
+	uleb128	tmp18-func_begin0
+	uleb128	tmp19-func_begin0
+	db	1
+	db	82
+	db	0
+	private	debug_loc1
+debug_loc1:
+	db	4
+	uleb128	tmp23-func_begin0
+	uleb128	tmp24-func_begin0
+	db	1
+	db	81
+	db	0
+	private	debug_loc2
+debug_loc2:
+	db	4
+	uleb128	tmp26-func_begin0
+	uleb128	tmp28-func_begin0
+	db	1
+	db	80
+	db	4
+	uleb128	tmp29-func_begin0
+	uleb128	tmp31-func_begin0
+	db	1
+	db	80
+	db	0
+	private	debug_loc3
+debug_loc3:
+	db	4
+	uleb128	tmp30-func_begin0
+	uleb128	tmp31-func_begin0
+	db	2
+	db	113
+	db	0
+	db	4
+	uleb128	tmp33-func_begin0
+	uleb128	tmp35-func_begin0
+	db	1
+	db	82
+	db	0
+	private	debug_loc4
+debug_loc4:
+	db	4
+	uleb128	tmp32-func_begin0
+	uleb128	tmp40-func_begin0
+	db	1
+	db	80
+	db	4
+	uleb128	tmp56-func_begin0
+	uleb128	tmp57-func_begin0
+	db	1
+	db	80
+	db	0
+	private	debug_loc5
+debug_loc5:
+	db	4
+	uleb128	tmp36-func_begin0
+	uleb128	tmp38-func_begin0
+	db	3
+	db	116
+	db	3
+	db	6
+	db	4
+	uleb128	tmp38-func_begin0
+	uleb128	tmp39-func_begin0
+	db	2
+	db	114
+	db	0
+	db	4
+	uleb128	tmp39-func_begin0
+	uleb128	tmp43-func_begin0
+	db	3
+	db	116
+	db	3
+	db	6
+	db	0
+	private	debug_loc6
+debug_loc6:
+	db	4
+	uleb128	tmp42-func_begin0
+	uleb128	tmp57-func_begin0
+	db	4
+	db	16
+	db	192
+	db	62
+	db	159
+	db	0
+	private	debug_loc7
+debug_loc7:
+	db	4
+	uleb128	tmp49-func_begin0
+	uleb128	tmp57-func_begin0
+	db	4
+	db	16
+	db	192
+	db	62
+	db	159
+	db	0
+	private	debug_loc8
+debug_loc8:
+	db	4
+	uleb128	tmp66-func_begin0
+	uleb128	tmp67-func_begin0
+	db	1
+	db	82
+	db	0
+	private	debug_loc9
+debug_loc9:
+	db	4
+	uleb128	tmp71-func_begin0
+	uleb128	tmp73-func_begin0
+	db	2
+	db	116
+	db	3
+	db	4
+	uleb128	tmp73-func_begin0
+	uleb128	tmp75-func_begin0
+	db	1
+	db	81
+	db	4
+	uleb128	tmp79-func_begin0
+	uleb128	tmp81-func_begin0
+	db	1
+	db	81
+	db	0
+	private	debug_loc10
+debug_loc10:
+	db	4
+	uleb128	tmp90-func_begin0
+	uleb128	tmp94-func_begin0
+	db	1
+	db	80
+	db	4
+	uleb128	tmp98-func_begin0
+	uleb128	func_end3-func_begin0
+	db	1
+	db	80
+	db	0
+	private	debug_loc11
+debug_loc11:
+	db	4
+	uleb128	tmp104-func_begin0
+	uleb128	tmp105-func_begin0
+	db	1
+	db	82
+	db	0
+	private	debug_loc12
+debug_loc12:
+	db	4
+	uleb128	tmp103-func_begin0
+	uleb128	func_end4-func_begin0
+	db	2
+	db	116
+	db	3
+	db	0
+	private	debug_loc13
+debug_loc13:
+	db	4
+	uleb128	tmp106-func_begin0
+	uleb128	tmp109-func_begin0
+	db	1
+	db	81
+	db	4
+	uleb128	tmp111-func_begin0
+	uleb128	tmp112-func_begin0
+	db	1
+	db	81
+	db	0
+	private	debug_loc14
+debug_loc14:
+	db	4
+	uleb128	tmp122-func_begin0
+	uleb128	tmp123-func_begin0
+	db	2
+	db	117
+	db	0
+	db	4
+	uleb128	tmp123-func_begin0
+	uleb128	func_end5-func_begin0
+	db	3
+	db	116
+	db	6
+	db	6
+	db	0
+	private	debug_loc15
+debug_loc15:
+	db	4
+	uleb128	tmp122-func_begin0
+	uleb128	tmp123-func_begin0
+	db	2
+	db	112
+	db	0
+	db	4
+	uleb128	tmp123-func_begin0
+	uleb128	tmp127-func_begin0
+	db	3
+	db	116
+	db	3
+	db	6
+	db	4
+	uleb128	tmp131-func_begin0
+	uleb128	func_end5-func_begin0
+	db	3
+	db	116
+	db	3
+	db	6
+	db	0
+	private	debug_loc16
+debug_loc16:
+	db	4
+	uleb128	tmp125-func_begin0
+	uleb128	tmp126-func_begin0
+	db	1
+	db	82
+	db	0
+	private	debug_loc17
+debug_loc17:
+	db	4
+	uleb128	tmp140-func_begin0
+	uleb128	tmp144-func_begin0
+	db	1
+	db	80
+	db	4
+	uleb128	tmp147-func_begin0
+	uleb128	tmp148-func_begin0
+	db	1
+	db	80
+	db	0
+	private	debug_list_header_end0
+debug_list_header_end0:
+	section	.debug_abbrev,"",@progbits
+	private	abbrev_start0
+abbrev_start0:
+	db	1
+	db	17
+	db	1
+	db	37
+	db	37
+	db	19
+	db	5
+	db	3
+	db	37
+	db	114
+	db	23
+	db	16
+	db	23
+	db	27
+	db	37
+	db	17
+	db	27
+	db	18
+	db	6
+	db	115
+	db	23
+	db	116
+	db	23
+	db	"Œ"
+	db	23
+	db	0
+	db	0
+	db	2
+	db	52
+	db	0
+	db	3
+	db	37
+	db	73
+	db	19
+	db	63
+	db	25
+	db	58
+	db	11
+	db	59
+	db	11
+	db	2
+	db	24
+	db	0
+	db	0
+	db	3
+	db	36
+	db	0
+	db	3
+	db	37
+	db	62
+	db	11
+	db	11
+	db	11
+	db	0
+	db	0
+	db	4
+	db	15
+	db	0
+	db	73
+	db	19
+	db	0
+	db	0
+	db	5
+	db	22
+	db	0
+	db	73
+	db	19
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	0
+	db	0
+	db	6
+	db	19
+	db	1
+	db	11
+	db	11
+	db	58
+	db	11
+	db	59
+	db	11
+	db	0
+	db	0
+	db	7
+	db	13
+	db	0
+	db	3
+	db	37
+	db	73
+	db	19
+	db	58
+	db	11
+	db	59
+	db	11
+	db	56
+	db	11
+	db	0
+	db	0
+	db	8
+	db	19
+	db	1
+	db	3
+	db	37
+	db	11
+	db	11
+	db	58
+	db	11
+	db	59
+	db	11
+	db	0
+	db	0
+	db	9
+	db	15
+	db	0
+	db	0
+	db	0
+	db	10
+	db	52
+	db	0
+	db	73
+	db	19
+	db	58
+	db	11
+	db	59
+	db	11
+	db	2
+	db	24
+	db	0
+	db	0
+	db	11
+	db	1
+	db	1
+	db	73
+	db	19
+	db	0
+	db	0
+	db	12
+	db	33
+	db	0
+	db	73
+	db	19
+	db	55
+	db	11
+	db	0
+	db	0
+	db	13
+	db	36
+	db	0
+	db	3
+	db	37
+	db	11
+	db	11
+	db	62
+	db	11
+	db	0
+	db	0
+	db	14
+	db	52
+	db	0
+	db	73
+	db	19
+	db	58
+	db	11
+	db	59
+	db	11
+	db	0
+	db	0
+	db	15
+	db	33
+	db	0
+	db	73
+	db	19
+	db	55
+	db	5
+	db	0
+	db	0
+	db	16
+	db	53
+	db	0
+	db	73
+	db	19
+	db	0
+	db	0
+	db	17
+	db	46
+	db	1
+	db	17
+	db	27
+	db	18
+	db	6
+	db	64
+	db	24
+	db	122
+	db	25
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	39
+	db	25
+	db	73
+	db	19
+	db	63
+	db	25
+	db	0
+	db	0
+	db	18
+	db	5
+	db	0
+	db	2
+	db	24
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	73
+	db	19
+	db	0
+	db	0
+	db	19
+	db	52
+	db	0
+	db	2
+	db	24
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	73
+	db	19
+	db	0
+	db	0
+	db	20
+	db	46
+	db	1
+	db	17
+	db	27
+	db	18
+	db	6
+	db	64
+	db	24
+	db	122
+	db	25
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	39
+	db	25
+	db	63
+	db	25
+	db	0
+	db	0
+	db	21
+	db	11
+	db	1
+	db	17
+	db	27
+	db	18
+	db	6
+	db	0
+	db	0
+	db	22
+	db	52
+	db	0
+	db	2
+	db	34
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	73
+	db	19
+	db	0
+	db	0
+	db	23
+	db	52
+	db	0
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	73
+	db	19
+	db	0
+	db	0
+	db	24
+	db	5
+	db	0
+	db	2
+	db	34
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	73
+	db	19
+	db	0
+	db	0
+	db	25
+	db	5
+	db	0
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	73
+	db	19
+	db	0
+	db	0
+	db	26
+	db	11
+	db	1
+	db	85
+	db	35
+	db	0
+	db	0
+	db	27
+	db	72
+	db	0
+	db	127
+	db	19
+	db	125
+	db	27
+	db	0
+	db	0
+	db	28
+	db	46
+	db	1
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	39
+	db	25
+	db	73
+	db	19
+	db	60
+	db	25
+	db	63
+	db	25
+	db	0
+	db	0
+	db	29
+	db	5
+	db	0
+	db	73
+	db	19
+	db	0
+	db	0
+	db	30
+	db	38
+	db	0
+	db	73
+	db	19
+	db	0
+	db	0
+	db	31
+	db	46
+	db	1
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	5
+	db	39
+	db	25
+	db	73
+	db	19
+	db	60
+	db	25
+	db	63
+	db	25
+	db	0
+	db	0
+	db	32
+	db	46
+	db	1
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	39
+	db	25
+	db	60
+	db	25
+	db	63
+	db	25
+	db	0
+	db	0
+	db	33
+	db	46
+	db	0
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	5
+	db	39
+	db	25
+	db	60
+	db	25
+	db	63
+	db	25
+	db	0
+	db	0
+	db	34
+	db	46
+	db	1
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	5
+	db	39
+	db	25
+	db	60
+	db	25
+	db	63
+	db	25
+	db	0
+	db	0
+	db	35
+	db	46
+	db	1
+	db	17
+	db	27
+	db	18
+	db	6
+	db	64
+	db	24
+	db	122
+	db	25
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	63
+	db	25
+	db	0
+	db	0
+	db	36
+	db	46
+	db	0
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	39
+	db	25
+	db	60
+	db	25
+	db	63
+	db	25
+	db	0
+	db	0
+	db	37
+	db	22
+	db	0
+	db	73
+	db	19
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	5
+	db	0
+	db	0
+	db	0
+	section	.debug_info,"",@progbits
+	private	cu_begin0
+cu_begin0:
+	dd	debug_info_end0-debug_info_start0
+	private	debug_info_start0
+debug_info_start0:
+	dw	5
+	db	1
+	db	3
+	dd	abbrev_start0
+	db	1
+	db	0
+	dw	12
+	db	1
+	dd	str_offsets_base0
+	dd	line_table_start0
+	db	2
+	db	21
+	dd	func_end6-func_begin0
+	dd	addr_table_base0
+	dd	rnglists_table_base0
+	dd	loclists_table_base0
+	db	2
+	db	3
+	dd	54
+
+	db	1
+	db	18
+	db	2
+	db	161
+	db	0
+	db	3
+	db	4
+	db	5
+	db	3
+	db	2
+	db	5
+	dd	69
+
+	db	1
+	db	19
+	db	2
+	db	161
+	db	1
+	db	4
+	dd	74
+	db	5
+	dd	82
+	db	11
+	db	2
+	db	36
+	db	6
+	db	6
+	db	2
+	db	33
+	db	7
+	db	6
+	dd	105
+	db	2
+	db	34
+	db	0
+	db	7
+	db	10
+	dd	54
+	db	2
+	db	35
+	db	3
+	db	0
+	db	4
+	dd	110
+	db	8
+	db	9
+	db	6
+	db	2
+	db	28
+	db	7
+	db	7
+	dd	134
+	db	2
+	db	29
+	db	0
+	db	7
+	db	8
+	dd	105
+	db	2
+	db	30
+	db	3
+	db	0
+	db	9
+	db	10
+	dd	145
+	db	1
+	db	46
+	db	2
+	db	161
+	db	2
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	2
+	db	0
+	db	3
+	db	12
+	db	6
+	db	1
+	db	13
+	db	13
+	db	8
+	db	7
+	db	10
+	dd	175
+	db	1
+	db	48
+	db	2
+	db	161
+	db	3
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	19
+	db	0
+	db	10
+	dd	197
+	db	1
+	db	58
+	db	2
+	db	161
+	db	4
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	34
+	db	0
+	db	10
+	dd	219
+	db	1
+	db	65
+	db	2
+	db	161
+	db	5
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	42
+	db	0
+	db	10
+	dd	241
+	db	1
+	db	72
+	db	2
+	db	161
+	db	6
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	30
+	db	0
+	db	10
+	dd	263
+	db	1
+	db	84
+	db	2
+	db	161
+	db	7
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	21
+	db	0
+	db	14
+	dd	282
+	db	1
+	db	87
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	4
+	db	0
+	db	10
+	dd	304
+	db	1
+	db	89
+	db	2
+	db	161
+	db	8
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	15
+	db	0
+	db	10
+	dd	326
+	db	1
+	db	91
+	db	2
+	db	161
+	db	9
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	24
+	db	0
+	db	10
+	dd	348
+	db	1
+	db	92
+	db	2
+	db	161
+	db	10
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	3
+	db	0
+	db	10
+	dd	197
+	db	1
+	db	97
+	db	2
+	db	161
+	db	11
+	db	10
+	dd	380
+	db	1
+	db	100
+	db	2
+	db	161
+	db	12
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	16
+	db	0
+	db	10
+	dd	402
+	db	1
+	db	107
+	db	2
+	db	161
+	db	13
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	7
+	db	0
+	db	10
+	dd	282
+	db	1
+	db	139
+	db	2
+	db	161
+	db	14
+	db	10
+	dd	434
+	db	1
+	db	149
+	db	2
+	db	161
+	db	15
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	9
+	db	0
+	db	10
+	dd	456
+	db	1
+	db	156
+	db	2
+	db	161
+	db	16
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	59
+	db	0
+	db	10
+	dd	478
+	db	1
+	db	159
+	db	2
+	db	161
+	db	17
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	17
+	db	0
+	db	10
+	dd	500
+	db	1
+	db	167
+	db	2
+	db	161
+	db	18
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	13
+	db	0
+	db	2
+	db	14
+	dd	523
+
+	db	1
+	db	16
+	db	2
+	db	161
+	db	19
+	db	11
+	dd	536
+	db	15
+	dd	161
+	dw	8000
+	db	0
+	db	5
+	dd	544
+	db	16
+	db	3
+	db	11
+	db	3
+	db	15
+	db	8
+	db	1
+	db	2
+	db	17
+	dd	559
+
+	db	1
+	db	17
+	db	2
+	db	161
+	db	20
+	db	11
+	dd	572
+	db	15
+	dd	161
+	dw	256
+	db	0
+	db	5
+	dd	580
+	db	19
+	db	3
+	db	35
+	db	3
+	db	18
+	db	7
+	db	2
+	db	4
+	dd	536
+	db	4
+	dd	157
+	db	5
+	dd	602
+	db	21
+	db	3
+	db	71
+	db	3
+	db	20
+	db	7
+	db	4
+	db	4
+	dd	611
+	db	5
+	dd	619
+	db	26
+	db	1
+	db	25
+	db	6
+	db	11
+	db	1
+	db	20
+	db	7
+	db	22
+	dd	660
+	db	1
+	db	21
+	db	0
+	db	7
+	db	23
+	dd	572
+	db	1
+	db	22
+	db	6
+	db	7
+	db	24
+	dd	536
+	db	1
+	db	23
+	db	8
+	db	7
+	db	25
+	dd	572
+	db	1
+	db	24
+	db	9
+	db	0
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	6
+	db	0
+	db	4
+	dd	677
+	db	16
+	dd	572
+	db	17
+	db	21
+	dd	func_end0-func_begin0
+	db	1
+	db	84
+
+	db	41
+	db	1
+	db	29
+
+	dd	1581
+
+	db	18
+	db	1
+	db	81
+	db	53
+	db	1
+	db	29
+	dd	54
+	db	19
+	db	2
+	db	117
+	db	0
+	db	52
+	db	1
+	db	30
+	dd	1581
+	db	0
+	db	20
+	db	22
+	dd	func_end1-func_begin1
+	db	1
+	db	84
+
+	db	46
+	db	1
+	db	36
+
+
+	db	18
+	db	2
+	db	145
+	db	3
+	db	55
+	db	1
+	db	36
+	dd	584
+	db	21
+	db	23
+	dd	tmp19-tmp8
+	db	22
+	db	0
+	db	54
+	db	1
+	db	37
+	dd	54
+	db	21
+	db	24
+	dd	tmp16-tmp10
+	db	23
+	db	57
+	db	1
+	db	38
+	dd	1614
+	db	21
+	db	24
+	dd	tmp16-tmp10
+	db	19
+	db	1
+	db	81
+	db	56
+	db	1
+	db	39
+	dd	54
+	db	0
+	db	0
+	db	0
+	db	0
+	db	20
+	db	25
+	dd	func_end2-func_begin2
+	db	1
+	db	84
+
+	db	47
+	db	1
+	db	45
+
+
+	db	24
+	db	1
+	db	58
+	db	1
+	db	45
+	dd	944
+	db	25
+	db	65
+	db	1
+	db	45
+	dd	606
+	db	22
+	db	2
+	db	59
+	db	1
+	db	46
+	dd	1619
+	db	22
+	db	3
+	db	23
+	db	1
+	db	52
+	dd	572
+	db	21
+	db	26
+	dd	tmp60-tmp32
+	db	22
+	db	4
+	db	61
+	db	1
+	db	55
+	dd	54
+	db	26
+	db	0
+	db	22
+	db	5
+	db	62
+	db	1
+	db	56
+	dd	594
+	db	22
+	db	6
+	db	63
+	db	1
+	db	63
+	dd	594
+	db	22
+	db	7
+	db	64
+	db	1
+	db	68
+	dd	594
+	db	0
+	db	0
+	db	27
+	dd	925
+	db	27
+	db	27
+	dd	954
+	db	28
+	db	27
+	dd	954
+	db	29
+	db	27
+	dd	954
+	db	30
+	db	27
+	dd	719
+	db	31
+	db	27
+	dd	996
+	db	32
+	db	27
+	dd	1006
+	db	33
+	db	0
+	db	28
+	db	27
+	db	4
+	db	122
+
+	dd	536
+
+
+	db	29
+	dd	944
+	db	29
+	dd	944
+	db	0
+	db	4
+	dd	949
+	db	30
+	dd	157
+	db	31
+	db	28
+	db	4
+	dw	265
+
+	dd	984
+
+
+	db	29
+	dd	134
+	db	29
+	dd	984
+	db	29
+	dd	984
+	db	29
+	dd	536
+	db	0
+	db	5
+	dd	992
+	db	30
+	db	5
+	db	34
+	db	3
+	db	29
+	db	7
+	db	3
+	db	32
+	db	31
+	db	6
+	db	25
+
+
+
+	db	29
+	dd	572
+	db	0
+	db	28
+	db	32
+	db	4
+	db	159
+
+	dd	54
+
+
+	db	29
+	dd	536
+	db	0
+	db	20
+	db	34
+	dd	func_end3-func_begin3
+	db	1
+	db	84
+
+	db	48
+	db	1
+	db	82
+
+
+	db	24
+	db	8
+	db	65
+	db	1
+	db	82
+	dd	606
+	db	19
+	db	2
+	db	145
+	db	33
+	db	66
+	db	1
+	db	85
+	dd	1628
+	db	22
+	db	9
+	db	68
+	db	1
+	db	87
+	dd	1619
+	db	21
+	db	35
+	dd	tmp99-tmp91
+	db	22
+	db	10
+	db	61
+	db	1
+	db	103
+	dd	54
+	db	21
+	db	36
+	dd	tmp97-tmp93
+	db	19
+	db	2
+	db	145
+	db	21
+	db	58
+	db	1
+	db	104
+	dd	1628
+	db	19
+	db	2
+	db	145
+	db	9
+	db	67
+	db	1
+	db	105
+	dd	1628
+	db	0
+	db	0
+	db	27
+	dd	925
+	db	37
+	db	27
+	dd	1148
+	db	38
+	db	27
+	dd	954
+	db	39
+	db	27
+	dd	1006
+	db	40
+	db	27
+	dd	1153
+	db	41
+	db	27
+	dd	996
+	db	42
+	db	27
+	dd	790
+	db	43
+	db	0
+	db	33
+	db	33
+	db	7
+	dw	600
+
+
+
+	db	34
+	db	34
+	db	7
+	dw	739
+
+
+
+	db	29
+	dd	536
+	db	0
+	db	17
+	db	44
+	dd	func_end4-func_begin4
+	db	1
+	db	84
+
+	db	49
+	db	1
+	db	113
+
+	dd	606
+
+	db	24
+	db	11
+	db	22
+	db	1
+	db	113
+	dd	589
+	db	19
+	db	2
+	db	145
+	db	6
+	db	69
+	db	1
+	db	123
+	dd	348
+	db	22
+	db	12
+	db	65
+	db	1
+	db	114
+	dd	606
+	db	22
+	db	13
+	db	59
+	db	1
+	db	115
+	dd	1619
+	db	27
+	dd	925
+	db	45
+	db	27
+	dd	954
+	db	46
+	db	27
+	dd	954
+	db	47
+	db	27
+	dd	954
+	db	48
+	db	27
+	dd	954
+	db	49
+	db	27
+	dd	954
+	db	50
+	db	27
+	dd	1006
+	db	51
+	db	0
+	db	35
+	db	52
+	dd	func_end5-func_begin5
+	db	1
+	db	84
+
+	db	50
+	db	1
+	db	133
+
+	db	22
+	db	14
+	db	70
+	db	1
+	db	137
+	dd	589
+	db	22
+	db	15
+	db	71
+	db	1
+	db	138
+	dd	536
+	db	22
+	db	16
+	db	72
+	db	1
+	db	136
+	dd	589
+	db	27
+	dd	1317
+	db	53
+	db	27
+	dd	1164
+	db	54
+	db	27
+	dd	1346
+	db	55
+	db	0
+	db	28
+	db	35
+	db	4
+	db	243
+
+	dd	589
+
+
+	db	29
+	dd	1341
+	db	29
+	dd	944
+	db	29
+	dd	584
+	db	0
+	db	4
+	dd	134
+	db	32
+	db	36
+	db	2
+	db	40
+
+
+
+	db	29
+	dd	69
+	db	29
+	dd	134
+	db	0
+	db	17
+	db	56
+	dd	func_end6-func_begin6
+	db	1
+	db	84
+
+	db	51
+	db	1
+	db	145
+
+	dd	54
+
+	db	21
+	db	57
+	dd	tmp148-tmp140
+	db	22
+	db	17
+	db	61
+	db	1
+	db	154
+	dd	54
+	db	21
+	db	58
+	dd	tmp146-tmp143
+	db	19
+	db	2
+	db	145
+	db	6
+	db	65
+	db	1
+	db	155
+	dd	611
+	db	0
+	db	0
+	db	27
+	dd	1260
+	db	59
+	db	27
+	dd	1531
+	db	60
+	db	27
+	dd	1550
+	db	61
+	db	27
+	dd	1531
+	db	62
+	db	27
+	dd	1153
+	db	63
+	db	27
+	dd	1554
+	db	64
+	db	27
+	dd	1531
+	db	65
+	db	27
+	dd	1570
+	db	66
+	db	27
+	dd	996
+	db	67
+	db	27
+	dd	1531
+	db	68
+	db	27
+	dd	1153
+	db	69
+	db	27
+	dd	1554
+	db	70
+	db	27
+	dd	1531
+	db	71
+	db	27
+	dd	1570
+	db	72
+	db	27
+	dd	996
+	db	73
+	db	27
+	dd	996
+	db	74
+	db	27
+	dd	1531
+	db	75
+	db	27
+	dd	1531
+	db	76
+	db	27
+	dd	1020
+	db	77
+	db	27
+	dd	1148
+	db	78
+	db	0
+	db	28
+	db	37
+	db	2
+	db	39
+
+	dd	105
+
+
+	db	29
+	dd	69
+	db	29
+	dd	54
+	db	0
+	db	36
+	db	38
+	db	8
+	db	26
+
+
+
+	db	34
+	db	39
+	db	7
+	dw	1230
+
+
+
+	db	29
+	dd	54
+	db	29
+	dd	54
+	db	0
+	db	34
+	db	40
+	db	7
+	dw	1197
+
+
+
+	db	29
+	dd	944
+	db	0
+	db	8
+	db	45
+	db	3
+	db	1
+	db	26
+	db	7
+	db	42
+	dd	536
+	db	1
+	db	27
+	db	0
+	db	7
+	db	43
+	dd	536
+	db	1
+	db	27
+	db	1
+	db	7
+	db	44
+	dd	536
+	db	1
+	db	27
+	db	2
+	db	0
+	db	4
+	dd	572
+	db	37
+	dd	536
+	db	60
+	db	4
+	dw	642
+	db	11
+	dd	157
+	db	12
+	dd	161
+	db	12
+	db	0
+	db	0
+	private	debug_info_end0
+debug_info_end0:
+	section	.debug_rnglists,"",@progbits
+	dd	debug_list_header_end1-debug_list_header_start1
+	private	debug_list_header_start1
+debug_list_header_start1:
+	dw	5
+	db	3
+	db	0
+	dd	1
+	private	rnglists_table_base0
+rnglists_table_base0:
+	dd	debug_ranges0-rnglists_table_base0
+	private	debug_ranges0
+debug_ranges0:
+	db	4
+	uleb128	tmp37-func_begin0
+	uleb128	tmp55-func_begin0
+	db	4
+	uleb128	tmp58-func_begin0
+	uleb128	tmp60-func_begin0
+	db	0
+	private	debug_list_header_end1
+debug_list_header_end1:
+	section	.debug_str_offsets,"",@progbits
+	dd	296
+	dw	5
+	dw	0
+	private	str_offsets_base0
+str_offsets_base0:
+	section	.debug_str,"MS",@progbits,1
+	private	info_string0
+info_string0:
+	db	"clang version 15.0.0 (https://github.com/CE-Programming/llvm-project 23b78267b5d376b232475d0805a937e54b61e0d0)", 0
+	private	info_string1
+info_string1:
+	db	"src\main.c", 0
+	private	info_string2
+info_string2:
+	db	"C:\Users\gabri\OneDrive\Desktop\Programming\Atlas\calc", 0
+	private	info_string3
+info_string3:
+	db	"currentSelected", 0
+	private	info_string4
+info_string4:
+	db	"int", 0
+	private	info_string5
+info_string5:
+	db	"Videos", 0
+	private	info_string6
+info_string6:
+	db	"First", 0
+	private	info_string7
+info_string7:
+	db	"data", 0
+	private	info_string8
+info_string8:
+	db	"Next", 0
+	private	info_string9
+info_string9:
+	db	"List_Node", 0
+	private	info_string10
+info_string10:
+	db	"length", 0
+	private	info_string11
+info_string11:
+	db	"List", 0
+	private	info_string12
+info_string12:
+	db	"char", 0
+	private	info_string13
+info_string13:
+	db	"__ARRAY_SIZE_TYPE__", 0
+	private	info_string14
+info_string14:
+	db	"frame", 0
+	private	info_string15
+info_string15:
+	db	"unsigned char", 0
+	private	info_string16
+info_string16:
+	db	"uint8_t", 0
+	private	info_string17
+info_string17:
+	db	"palette", 0
+	private	info_string18
+info_string18:
+	db	"unsigned short", 0
+	private	info_string19
+info_string19:
+	db	"uint16_t", 0
+	private	info_string20
+info_string20:
+	db	"unsigned long", 0
+	private	info_string21
+info_string21:
+	db	"uint32_t", 0
+	private	info_string22
+info_string22:
+	db	"name", 0
+	private	info_string23
+info_string23:
+	db	"frame_count", 0
+	private	info_string24
+info_string24:
+	db	"frame_bin_amount", 0
+	private	info_string25
+info_string25:
+	db	"frame_rate", 0
+	private	info_string26
+info_string26:
+	db	"video", 0
+	private	info_string27
+info_string27:
+	db	"ti_Open", 0
+	private	info_string28
+info_string28:
+	db	"ti_Read", 0
+	private	info_string29
+info_string29:
+	db	"unsigned int", 0
+	private	info_string30
+info_string30:
+	db	"size_t", 0
+	private	info_string31
+info_string31:
+	db	"delay", 0
+	private	info_string32
+info_string32:
+	db	"ti_Close", 0
+	private	info_string33
+info_string33:
+	db	"gfx_End", 0
+	private	info_string34
+info_string34:
+	db	"gfx_FillScreen", 0
+	private	info_string35
+info_string35:
+	db	"ti_DetectAny", 0
+	private	info_string36
+info_string36:
+	db	"List_AppendElement", 0
+	private	info_string37
+info_string37:
+	db	"List_GetElement", 0
+	private	info_string38
+info_string38:
+	db	"kb_Scan", 0
+	private	info_string39
+info_string39:
+	db	"gfx_SetTextXY", 0
+	private	info_string40
+info_string40:
+	db	"gfx_PrintString", 0
+	private	info_string41
+info_string41:
+	db	"fromNumberToStruct", 0
+	private	info_string42
+info_string42:
+	db	"r", 0
+	private	info_string43
+info_string43:
+	db	"g", 0
+	private	info_string44
+info_string44:
+	db	"b", 0
+	private	info_string45
+info_string45:
+	db	"color", 0
+	private	info_string46
+info_string46:
+	db	"draw_frame", 0
+	private	info_string47
+info_string47:
+	db	"play_video", 0
+	private	info_string48
+info_string48:
+	db	"playFullVideo", 0
+	private	info_string49
+info_string49:
+	db	"getVideoFromVarName", 0
+	private	info_string50
+info_string50:
+	db	"getVideos", 0
+	private	info_string51
+info_string51:
+	db	"main", 0
+	private	info_string52
+info_string52:
+	db	"c", 0
+	private	info_string53
+info_string53:
+	db	"num", 0
+	private	info_string54
+info_string54:
+	db	"y", 0
+	private	info_string55
+info_string55:
+	db	"f", 0
+	private	info_string56
+info_string56:
+	db	"x", 0
+	private	info_string57
+info_string57:
+	db	"row", 0
+	private	info_string58
+info_string58:
+	db	"varname", 0
+	private	info_string59
+info_string59:
+	db	"var", 0
+	private	info_string60
+info_string60:
+	db	"ti_var_t", 0
+	private	info_string61
+info_string61:
+	db	"i", 0
+	private	info_string62
+info_string62:
+	db	"size", 0
+	private	info_string63
+info_string63:
+	db	"expected", 0
+	private	info_string64
+info_string64:
+	db	"to_read", 0
+	private	info_string65
+info_string65:
+	db	"vid", 0
+	private	info_string66
+info_string66:
+	db	"name_copy", 0
+	private	info_string67
+info_string67:
+	db	"name_copy2", 0
+	private	info_string68
+info_string68:
+	db	"paletteVar", 0
+	private	info_string69
+info_string69:
+	db	"header", 0
+	private	info_string70
+info_string70:
+	db	"vat_ptr", 0
+	private	info_string71
+info_string71:
+	db	"var_type", 0
+	private	info_string72
+info_string72:
+	db	"var_name", 0
+	section	.debug_str_offsets,"",@progbits
+	dd	info_string0
+	dd	info_string1
+	dd	info_string2
+	dd	info_string3
+	dd	info_string4
+	dd	info_string5
+	dd	info_string6
+	dd	info_string7
+	dd	info_string8
+	dd	info_string9
+	dd	info_string10
+	dd	info_string11
+	dd	info_string12
+	dd	info_string13
+	dd	info_string14
+	dd	info_string15
+	dd	info_string16
+	dd	info_string17
+	dd	info_string18
+	dd	info_string19
+	dd	info_string20
+	dd	info_string21
+	dd	info_string22
+	dd	info_string23
+	dd	info_string24
+	dd	info_string25
+	dd	info_string26
+	dd	info_string27
+	dd	info_string28
+	dd	info_string29
+	dd	info_string30
+	dd	info_string31
+	dd	info_string32
+	dd	info_string33
+	dd	info_string34
+	dd	info_string35
+	dd	info_string36
+	dd	info_string37
+	dd	info_string38
+	dd	info_string39
+	dd	info_string40
+	dd	info_string41
+	dd	info_string42
+	dd	info_string43
+	dd	info_string44
+	dd	info_string45
+	dd	info_string46
+	dd	info_string47
+	dd	info_string48
+	dd	info_string49
+	dd	info_string50
+	dd	info_string51
+	dd	info_string52
+	dd	info_string53
+	dd	info_string54
+	dd	info_string55
+	dd	info_string56
+	dd	info_string57
+	dd	info_string58
+	dd	info_string59
+	dd	info_string60
+	dd	info_string61
+	dd	info_string62
+	dd	info_string63
+	dd	info_string64
+	dd	info_string65
+	dd	info_string66
+	dd	info_string67
+	dd	info_string68
+	dd	info_string69
+	dd	info_string70
+	dd	info_string71
+	dd	info_string72
+	section	.debug_addr,"",@progbits
+	dd	debug_addr_end0-debug_addr_start0
+	private	debug_addr_start0
+debug_addr_start0:
+	dw	5
+	db	3
+	db	0
+	private	addr_table_base0
+addr_table_base0:
+	dl	_currentSelected
+	dl	_Videos
+	dl	_.str
+	dl	_.str.1
+	dl	_.str.2
+	dl	_.str.3
+	dl	_.str.4
+	dl	_.str.5
+	dl	_.str.7
+	dl	_.str.8
+	dl	_.str.9
+	dl	_.str.10
+	dl	_.str.11
+	dl	_.str.12
+	dl	_.str.13
+	dl	_.str.14
+	dl	_.str.15
+	dl	_.str.16
+	dl	_.str.17
+	dl	_frame
+	dl	_palette
+	dl	func_begin0
+	dl	func_begin1
+	dl	tmp8
+	dl	tmp10
+	dl	func_begin2
+	dl	tmp32
+	dl	tmp25
+	dl	tmp31
+	dl	tmp40
+	dl	tmp50
+	dl	tmp53
+	dl	tmp54
+	dl	tmp61
+	dl	func_begin3
+	dl	tmp91
+	dl	tmp93
+	dl	tmp70
+	dl	tmp78
+	dl	tmp81
+	dl	tmp86
+	dl	tmp88
+	dl	tmp89
+	dl	tmp96
+	dl	func_begin4
+	dl	tmp105
+	dl	tmp112
+	dl	tmp113
+	dl	tmp114
+	dl	tmp115
+	dl	tmp116
+	dl	tmp117
+	dl	func_begin5
+	dl	tmp124
+	dl	tmp129
+	dl	tmp130
+	dl	func_begin6
+	dl	tmp140
+	dl	tmp143
+	dl	tmp139
+	dl	tmp144
+	dl	tmp153
+	dl	tmp161
+	dl	tmp163
+	dl	tmp164
+	dl	tmp165
+	dl	tmp166
+	dl	tmp167
+	dl	tmp174
+	dl	tmp176
+	dl	tmp177
+	dl	tmp178
+	dl	tmp179
+	dl	tmp180
+	dl	tmp182
+	dl	tmp184
+	dl	tmp186
+	dl	tmp187
+	dl	tmp189
+	private	debug_addr_end0
+debug_addr_end0:
+	ident	"clang version 15.0.0 (https://github.com/CE-Programming/llvm-project 23b78267b5d376b232475d0805a937e54b61e0d0)"
+	section	.debug_line,"",@progbits
+line_table_start0:
+	extern	__Unwind_SjLj_Register
+	extern	__frameset
+	extern	_malloc
+	extern	_sprintf
+	extern	_gfx_Begin
+	extern	_kb_Scan
+	extern	_ti_Close
+	extern	__sand
+	extern	__ishru
+	extern	__ishl
+	extern	_ti_Read
+	extern	_strlen
+	extern	_gfx_PrintString
+	extern	__setflag
+	extern	_gfx_FillScreen
+	extern	_NewList
+	extern	__Unwind_SjLj_Unregister
+	extern	_strcpy
+	extern	_ti_Open
+	extern	_ti_DetectAny
+	extern	_List_GetElement
+	extern	_delay
+	extern	_gfx_End
+	extern	__lcmpu
+	extern	__frameset0
+	extern	_gfx_SetTextXY
+	extern	_List_AppendElement
