@@ -10,7 +10,7 @@ import os
 
 # globals & Input
 dir = os.path.dirname(os.path.realpath(__file__)) # dir of this script
-filePath = input("Enter file path:") # mp4 file path.
+filePath = os.path.join(dir, input("Enter file path:")) # mp4 file path.
 vidName = ""
 frameRate = input("Enter fps");
 while True:
@@ -22,13 +22,18 @@ while True:
             print("Invalid name. Please use only letters and numbers, max 8 characters.")
     except Exception as e:
         print("") # invalid input
-ffmpeg_path = r'ffmpeg.exe' # fmmpeg executable path.
+ffmpeg_path = os.path.join(dir, 'ffmpeg.exe') # fmmpeg executable path.
+
 dims = (100, 80) # Dimensions on the TI-84 CE.
 palette_path = os.path.join(dir, f"{vidName}PAL.png") # path to palette file.
-binDir = "bins" # bins directory
+with open(palette_path, 'w') as f:
+    pass # 'pass' ensures the file is created without writing content
+binDir = dir+"\\"+"bins" # bins directory
 frames_dir = os.path.join(dir, "frames") # frames directory.
+ti_dir = os.path.join(dir, "ti_files");
 os.makedirs(frames_dir, exist_ok=True)
-
+os.makedirs(binDir, exist_ok=True) 
+os.makedirs(dir+"\\ti_files", exist_ok=True)
 # generates the palette file by using ffmpeg.
 paletteCommand = [
     ffmpeg_path,
@@ -49,8 +54,8 @@ for f in os.listdir(frames_dir):
 for f in os.listdir(binDir):
     if f.endswith(".bin"):
         os.remove(os.path.join(binDir, f))
-for f in os.listdir("ti_files"):
-    os.remove(os.path.join("ti_files", f))
+for f in os.listdir(dir+"//ti_files"):
+    os.remove(os.path.join(ti_dir, f))
 # Puts the frames in the frames directory.
 imageCMD = [
     ffmpeg_path,
@@ -100,7 +105,8 @@ os.makedirs("ti_files", exist_ok=True)
 framesPerBin = 4 # Amount of frames for each bin file. 
 for i in range(0, len(frameBytes), framesPerBin):
     chunk = frameBytes[i:i+framesPerBin]
-    with open(f"bins/{vidName}{i//framesPerBin:03}.bin","wb") as f:
+    with open(f"{binDir}/{vidName}{i//framesPerBin:03}.bin","wb") as f:
+        f.write("FRA".encode('ascii')); # Frame package header.
         f.write(struct.pack("<H", len(chunk)))  # number of frames
         for frame in chunk:
             f.write(struct.pack("<I", len(frame)))
@@ -150,18 +156,18 @@ def rgb888_to_ti555(r, g, b):
 img = Image.open(palette_path).convert("RGB") 
 data = list(img.getdata())[:256]
 
-os.makedirs('bins', exist_ok=True)
-with open(os.path.join('bins', f"{vidName}PAL.bin"), "wb") as f:
+os.makedirs(binDir, exist_ok=True)
+with open(os.path.join(binDir, f"{vidName}PAL.bin"), "wb") as f:
     for r, g, b in data:
         val = rgb888_to_ti555(r, g, b)
         f.write(struct.pack("<H", val))
 
-with open(os.path.join('bins', f"{vidName}DAT.bin"), "wb") as f:
+with open(os.path.join(binDir, f"{vidName}DAT.bin"), "wb") as f:
     name_bytes = vidName.encode('ascii')[:5].ljust(5, b'\x00')
     frame_count = np.uint16(len(frames))
     frame_bin_amount = (frame_count + framesPerBin - 1) // framesPerBin
     frame_rate = 1000//int(frameRate)  # 8 fps = 125 out of 1000
-    f.write("DAT".encode('ascii')) # 3 bytes
+    f.write("VID".encode('ascii')) # 3 bytes
     f.write(name_bytes) # 5 bytes
     f.write(struct.pack("<H", frame_count)) # 2
     f.write(struct.pack("<B", frame_bin_amount)) # 1 
@@ -169,7 +175,7 @@ with open(os.path.join('bins', f"{vidName}DAT.bin"), "wb") as f:
     
 
 bin_to_ti_files(
-    bin_dir="bins",
-    out_dir="ti_files",
-    convbin_path=r"convbin.exe",
+    bin_dir=binDir,
+    out_dir=ti_dir,
+    convbin_path=os.path.join(dir, "convbin.exe"),
     output_type="8xv")
