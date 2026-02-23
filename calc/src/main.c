@@ -37,7 +37,10 @@ void play_video(const char* varname, video* vid) {
         dbg_printf("Failed to open %s\n", varname);
         return;
     }
-
+    // reads & free's the frame bundle header ("FRA").
+    char* headerptr = malloc(3);
+    ti_Read(headerptr, 3, 1, var);
+    free(headerptr);
     uint16_t frame_count;
     ti_Read(&frame_count, sizeof(frame_count), 1, var);
 
@@ -76,7 +79,7 @@ void playFullVideo(video* vid) {
     
     dbg_printf("Palette opened");
     if (!paletteVar) {
-        dbg_sprintf("Failed to open palette ");
+        dbg_printf("Failed to open palette ");
         dbg_printf("%s", name_copy);
         gfx_End();
         return;
@@ -124,7 +127,7 @@ void getVideos() {
     char *var_name;
     char *vat_ptr = NULL;
     uint8_t var_type;
-    while ((var_name = ti_DetectAny(&vat_ptr, "DAT", &var_type) ) ) {
+    while ((var_name = ti_DetectAny(&vat_ptr, "VID", &var_type) ) ) {
         if (var_type == OS_TYPE_APPVAR) {
             List_AppendElement(Videos, getVideoFromVarName(var_name));
         }
@@ -132,52 +135,68 @@ void getVideos() {
 }
 int main(void)
 {
-    Videos = malloc(sizeof(List));
-    *Videos = NewList();
-    dbg_printf("STARTING");
-    gfx_Begin();
-    getVideos();
-    for (int i = 0; i < Videos->length; i++) {
-        video vid = *(video*)List_GetElement(Videos, i)->data;
-        dbg_printf("\nVideo %d: Name: %s, Frames: %d, Bins: %d, Frame Rate: %d\n", i, vid.name, vid.frame_count, vid.frame_bin_amount, vid.frame_rate);
-    }
-    if (Videos->length == 0) {
-        dbg_printf("No videos found!");
+    // if the ACONTEXT variable DOES exist, then play the video name it has.
+    ti_var_t ACONTEXT = ti_Open("ACONTEXT", "r");
+    if (ACONTEXT) {
+        gfx_Begin();
+        char* videoName = malloc(8);
+        ti_Read(videoName, 8, 1, ACONTEXT);
+        video* v = getVideoFromVarName(videoName);
+        playFullVideo(v);
+        ti_Close(ACONTEXT);
+        ti_Delete("ACONTEXT");
         return 0;
-    }    
-    else {
-        currentSelected = 0;
-        while (1==1) {
-            kb_Scan();
-            if (kb_Data[6] & kb_Enter) {
-                dbg_printf("Selected: %s", ((video*)List_GetElement(Videos, currentSelected)->data)->name);
-                playFullVideo((video*)List_GetElement(Videos, currentSelected)->data);
-                break;
-            }
-            if (kb_Data[7] & kb_Up) {
-                currentSelected++;
-                if (currentSelected >= Videos->length) currentSelected = 0;
-                dbg_printf("Selected: %s", ((video*)List_GetElement(Videos, currentSelected)->data)->name);
-                gfx_FillScreen(255);
-                gfx_SetTextXY(0, 230);
-                gfx_PrintString(((video*)List_GetElement(Videos, currentSelected)->data)->name);
-                delay(200);
-            }
-            if (kb_Data[7] & kb_Down) {
-                currentSelected--;
-                if (currentSelected < 0) currentSelected = Videos->length - 1;
-                dbg_printf("Selected: %s", ((video*)List_GetElement(Videos, currentSelected)->data)->name);
-                gfx_FillScreen(255);
-                gfx_SetTextXY(0, 230);
-                gfx_PrintString(((video*)List_GetElement(Videos, currentSelected)->data)->name);
-                delay(200);
-            }
-            delay(100);
-        }
+    
     }
+    else if (!ACONTEXT) {
+        // if the ACONTEXT variable does not exist, then play as if user opened ATLAS themselves.
+        Videos = malloc(sizeof(List));
+        *Videos = NewList();
+        dbg_printf("STARTING");
+        gfx_Begin();
+        getVideos();
+        for (int i = 0; i < Videos->length; i++) {
+            video vid = *(video*)List_GetElement(Videos, i)->data;
+            dbg_printf("\nVideo %d: Name: %s, Frames: %d, Bins: %d, Frame Rate: %d\n", i, vid.name, vid.frame_count, vid.frame_bin_amount, vid.frame_rate);
+        }
+        if (Videos->length == 0) {
+            dbg_printf("No videos found!");
+            return 0;
+        }    
+        else {
+            currentSelected = 0;
+            while (1==1) {
+                kb_Scan();
+                if (kb_Data[6] & kb_Enter) {
+                    dbg_printf("Selected: %s", ((video*)List_GetElement(Videos, currentSelected)->data)->name);
+                    playFullVideo((video*)List_GetElement(Videos, currentSelected)->data);
+                    break;
+                }
+                if (kb_Data[7] & kb_Up) {
+                    currentSelected++;
+                    if (currentSelected >= Videos->length) currentSelected = 0;
+                    dbg_printf("Selected: %s", ((video*)List_GetElement(Videos, currentSelected)->data)->name);
+                    gfx_FillScreen(255);
+                    gfx_SetTextXY(0, 230);
+                    gfx_PrintString(((video*)List_GetElement(Videos, currentSelected)->data)->name);
+                    delay(200);
+                }
+                if (kb_Data[7] & kb_Down) {
+                    currentSelected--;
+                    if (currentSelected < 0) currentSelected = Videos->length - 1;
+                    dbg_printf("Selected: %s", ((video*)List_GetElement(Videos, currentSelected)->data)->name);
+                    gfx_FillScreen(255);
+                    gfx_SetTextXY(0, 230);
+                    gfx_PrintString(((video*)List_GetElement(Videos, currentSelected)->data)->name);
+                    delay(200);
+                }
+                delay(100);
+            }
+        }
 
 
 
-    gfx_End();
-    return 0;
+        gfx_End();
+        return 0;
+}
 }

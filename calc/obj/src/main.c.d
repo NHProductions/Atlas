@@ -1,4 +1,4 @@
-obj/src/main.c.bc: src\main.c E:\CEDev\include\tice.h \
+obj/src/main.c.src: src\main.c E:\CEDev\include\tice.h \
   E:\CEDev\include\sys\basicusb.h E:\CEDev\include\stdbool.h \
   E:\CEDev\include\stdint.h E:\CEDev\include\cdefs.h \
   E:\CEDev\include\sys\lcd.h E:\CEDev\include\sys\power.h \
